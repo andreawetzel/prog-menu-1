@@ -162,6 +162,7 @@ ul#main-nav>li.is-active>a {
 //Sub Navigation Menu Styles
 .sub-menu-holder {
     width: 100%;
+    box-sizing: border-box;
     overflow: auto;
     z-index: 10;
     text-transform: uppercase;
