@@ -164,8 +164,7 @@ p {
   text-align: center; }
   @media (min-width: 750px) {
     .site-nav-box {
-      display: block;
-      max-height: 40px; } }
+      display: block; } }
 
 .site-nav:after {
   clear: both;
@@ -209,8 +208,7 @@ ul#main-nav > li > a {
       font-size: 16.25px;
       color: #FFF;
       border-top: none;
-      padding: 10px 20px;
-      height: 40px; }
+      padding: 10px 20px; }
       ul#main-nav > li > a:hover {
         color: #458599;
         background-color: #FFF; }
@@ -228,6 +226,7 @@ ul#main-nav > li.is-active > a {
 
 .sub-menu-holder {
   width: 100%;
+  box-sizing: border-box;
   overflow: auto;
   z-index: 10;
   text-transform: uppercase;
