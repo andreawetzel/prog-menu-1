@@ -1,0 +1,276 @@
+//Color Variables__________________________________//
+$color-dark-gray: #444;
+$color-medium-gray: #C2C2C2;
+$color-light-gray: #EDEDED;
+$color-primary: #458599;
+$color-white: #FFF;
+$color-black: #000;
+$color-secondary: $color-dark-gray;
+$color-text: $color-dark-gray;
+
+
+//Grid Variables__________________________________//
+$grid-small: 'min-width: 500px';
+$grid-medium: 'min-width: 700px';
+$grid-large: 'min-width: 750px';
+$grid-large-container: 750px;
+
+//Font Variables__________________________________//
+$font-primary: 'Open Sans', sans-serif;
+
+//Imports__________________________________//
+@import "_reset.scss";
+
+//Base Styles
+body {
+    color: $color-text;
+    font-family: $font-primary;
+    background-color: $color-light-gray;
+}
+a {
+    color: $color-primary;
+    text-decoration: none;
+}
+
+a:hover, a:focus, a:active {
+    color: $color-text;
+}
+.body-text {
+    padding: 20px 10px;
+    @media ($grid-large){
+        width: $grid-large-container;
+        margin: 0 auto;
+    }
+}
+
+h1 {
+    font-size: 1.5em;
+    font-weight: Bold;
+    line-height: 1.3em;
+    margin-bottom: 10px;
+}
+p {
+    margin-bottom: 20px;
+}
+
+
+
+//Mobile Menu Button
+
+//If JavaScript is loaded, hide the mobile navigation so we can expand it with a click event from the menu button.
+.js-menu-holder.is-hidden {
+    display: none;
+    @media ($grid-large){
+        display: block;
+    }
+}
+
+//Mobile Menu Button, hidden on desktop, useless without JavaScript
+.mobile-nav-expand {
+    text-align: center;
+    @media ($grid-large){
+        display: none;
+    }
+}
+.mobile-nav-expand a {
+    cursor: pointer;
+    padding: 10px;
+    background-color: $color-primary;
+    color: $color-white;
+    display: block;
+    text-transform: uppercase;
+    margin: 20px 20%;
+}
+
+
+//Site Navigation
+.site-nav-box {
+    background-color: $color-primary;
+    color: $color-white;
+    text-align: center;
+    @media ($grid-large){
+         display: block;
+    }
+}
+.site-nav:after {
+    clear: both;
+    display: table;
+    content: "";
+}
+.site-nav {
+    @media ($grid-large){
+        display: inline-block;
+        max-height: 39px;
+    }
+}
+.main-header-nav ul{
+    text-align: left;
+    @media ($grid-large) {
+        text-align: center;
+    }
+}
+.main-header-nav ul>li {
+    @media ($grid-large) {
+        float: left;
+        width: auto;
+    }
+}
+ul#main-nav>li>a {
+    background-color: $color-dark-gray;
+    padding: 10px 10px 10px 15px;
+    text-transform: uppercase;
+    font-size: 22px;
+    color: $color-medium-gray;
+    display: block;
+    border-top: 1px solid $color-medium-gray;
+    cursor: pointer;
+    &:hover {
+        color: $color-black;
+        background-color: $color-primary;
+    }
+    &:active {
+        color: $color-black;
+        background-color: $color-primary;
+    }
+
+    @media ($grid-large){
+        background-color: $color-primary;
+        font-size: 16.25px;
+        color: $color-white;
+        border-top: none;
+        padding: 10px 20px;
+        &:hover {
+            color: $color-primary;
+            background-color: $color-white
+        }
+        &:active {
+            color: $color-white;
+            background-color: $color-secondary
+        }
+    }
+}
+ul#main-nav>li.is-active>a {
+    color: $color-black;
+    background-color: $color-primary;
+    @media ($grid-large){
+        color: $color-primary;
+        background-color: $color-white
+    }
+}
+
+
+//Sub Navigation Menu Styles
+.sub-menu-holder {
+    width: 100%;
+    overflow: auto;
+    z-index: 10;
+    text-transform: uppercase;
+    font-size: 18px;
+    line-height: 1.8em;
+    padding: 5px 10px;
+    background: $color-light-gray;
+    @media ($grid-large){
+        background: $color-white;
+        padding: 20px 10px;
+    }
+}
+
+.menu > .menu-item > .sub-menu-holder {
+    @media ($grid-large){
+        border-bottom: 1px solid $color-medium-gray;
+        border-left: 1px solid $color-medium-gray;
+        border-right: 1px solid $color-medium-gray;
+        position: absolute;
+        left: 0;
+        overflow: visible;
+        background: $color-white;
+    }
+}
+.sub-menus {
+    @media ($grid-large){
+        width: $grid-large-container;
+        margin: 0 auto;
+    }
+}
+.sub-menus:after {
+    content: "";
+    display: table;
+    clar: both;
+}
+li ul.sub-menu li {
+    width: 100%;
+    text-align: left;
+    margin: 0;
+    list-style: none;
+    @media ($grid-large){
+        padding: 0 20px 0 0;
+    }
+}
+li ul.sub-menu li .sub-menu{
+    text-transform: none;
+    font-size: 14px;
+    border-top: none;
+    @media ($grid-large){
+        margin: 0;
+        padding: 0;
+    }
+}
+
+li ul.sub-menu li .sub-menu a{
+    display: block;
+    padding: 2px 0;
+    @media ($grid-large){
+        padding: 0;
+    }
+}
+li ul.sub-menu li .sub-menu li{
+    @media ($grid-large){
+        padding-left: 0;
+    }
+}
+.main-header-nav .sub-menu li a{
+    margin-left: 5px;
+}
+.sub-menu-holder h2{
+    display: none;
+    @media ($grid-large){
+        display: block;
+        font-size: 24px;
+        font-weight: 700;
+        text-transform: none;
+        border-bottom: 1px solid $color-medium-gray;
+        margin-bottom: 10px;
+        color: $color-text;
+        text-align: left;
+        margin-top: 10px;
+    }
+}
+
+
+//CSS Only Dropdown Styles
+
+.sub-menu-holder {
+    display: none;
+}
+
+.menu-item:hover .sub-menu-holder {
+    display: block;
+}
+
+//JS Dropdown styles that override CSS
+
+.menu-item:hover .sub-menu-holder.js-menu {
+    display: none;
+}
+.js-menu{
+    display: none;
+}
+
+
+
+
+
+
+
+
+//End Nav styles
